@@ -92,7 +92,7 @@ function parseAlias(currentValue) {
 //=================================== get GraphQL Value
 //=====================================================
 function getGraphQLValue(value) {
-    if ("string" === typeof value) {
+    if (("string" === typeof value) || (null === value)) {
         return JSON.stringify(value);
     } else if (Array.isArray(value)) {
         return "[" + value.map(function (item) {
